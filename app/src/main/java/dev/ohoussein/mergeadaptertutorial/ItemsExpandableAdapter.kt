@@ -73,19 +73,6 @@ class ItemsExpandableAdapter(private val itemsGroup: ItemsGroup) :
         }
     }
 
-    private fun onExpanded() {
-        notifyItemRangeInserted(1, itemsGroup.items.size)
-        //To update the header expand icon
-        notifyItemChanged(0)
-    }
-
-    private fun onCollapsed() {
-        notifyItemRangeRemoved(1, itemsGroup.items.size)
-        //To update the header expand icon
-        notifyItemChanged(0)
-    }
-
-
     sealed class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         class ItemVH(itemView: View) : ViewHolder(itemView) {

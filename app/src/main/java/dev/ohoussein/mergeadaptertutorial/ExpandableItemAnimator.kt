@@ -63,6 +63,11 @@ class ExpandableItemAnimator : DefaultItemAnimator() {
         }
         return super.animateChange(oldHolder, holder, preInfo, postInfo)
     }
+
+    //It means that for animation we don’t need to have separated objects of ViewHolder (old and new holder)
+    override fun canReuseUpdatedViewHolder(viewHolder: RecyclerView.ViewHolder): Boolean {
+        return true
+    }
 }
 
 class HeaderItemInfo : RecyclerView.ItemAnimator.ItemHolderInfo() {
