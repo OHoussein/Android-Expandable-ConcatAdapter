@@ -16,16 +16,16 @@ class MainActivity : AppCompatActivity() {
         val adapters: List<ItemsExpandableAdapter> = itemsGroupList.map { itemsGroup ->
             ItemsExpandableAdapter(itemsGroup)
         }
-        val mergeAdapterConfig = ConcatAdapter.Config.Builder()
+        val concatAdapterConfig = ConcatAdapter.Config.Builder()
             .setIsolateViewTypes(false)
             .build()
-        val mergeAdapter = ConcatAdapter(mergeAdapterConfig, adapters)
+        val concatAdapter = ConcatAdapter(concatAdapterConfig, adapters)
 
         with(rvItems) {
             layoutManager = LinearLayoutManager(context)
             itemAnimator =
                 ExpandableItemAnimator()
-            adapter = mergeAdapter
+            adapter = concatAdapter
         }
 
     }
